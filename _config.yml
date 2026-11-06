@@ -10,3 +10,7 @@ kramdown:
 
 # Collections & Permalinks
 permalink: /blog/:year/:month/:day/:title/
+
+# Plugins supported by GitHub Pages
+plugins:
+  - jekyll-sitemap
