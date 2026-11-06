@@ -1,0 +1,203 @@
+---
+layout: default
+title: Home
+---
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container container-narrow">
+    <div class="hero-tag">
+      <span>🎮</span> Game Developer &bull; Filmmaker &bull; Creative Director
+    </div>
+    
+    <h1 class="hero-title">
+      Crafting worlds across <span class="gradient-text">Games & Films</span>
+    </h1>
+    
+    <blockquote class="hero-quote">
+      "To see a world in a grain of sand and heaven in a wild flower,<br>
+      Hold infinity in the palm of your hand and eternity in an hour."
+      <cite>&mdash; William Blake</cite>
+    </blockquote>
+
+    <div class="hero-actions">
+      <a href="#games" class="btn btn-primary">
+        <span>🎮</span> Explore Games
+      </a>
+      <a href="#shorts" class="btn btn-secondary">
+        <span>🎬</span> Watch Shorts
+      </a>
+      <a href="{{ '/about/' | relative_url }}" class="btn btn-secondary">
+        <span>👤</span> About Me
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Games Section -->
+<section class="section" id="games">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title"><span>🎮</span> Featured Games</h2>
+        <p class="section-desc">Independent video game projects crafted for console and PC.</p>
+      </div>
+      <a href="{{ '/games/' | relative_url }}" class="section-link">View all games &rarr;</a>
+    </div>
+
+    <div class="grid">
+      <!-- Back to Belt -->
+      <article class="card">
+        <div class="card-img-wrap">
+          <img src="{{ '/assets/img/BackToBelt_BoxArt.png' | relative_url }}" alt="Back to Belt Box Art" loading="lazy">
+          <span class="card-badge">Available on Xbox</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Back to Belt</h3>
+          <p class="card-text">
+            A fast-paced arcade tribute to the 40th anniversary of Asteroids. Navigate a vector sphere across 64+ stages, mini-games, and intense retro challenges.
+          </p>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
+            <a href="https://www.microsoft.com/p/back-to-belt/9nf01rqth4qh" target="_blank" rel="noopener" class="btn btn-xbox" style="padding: 0.45rem 1rem; font-size: 0.85rem;">
+              <span>🎮</span> Get on Xbox
+            </a>
+            <a href="{{ '/games/back-to-belt/' | relative_url }}" class="btn btn-secondary" style="padding: 0.45rem 1rem; font-size: 0.85rem;">
+              Details &amp; Trailer
+            </a>
+          </div>
+          <div class="card-footer">
+            <span>Xbox Series X|S &bull; Xbox One &bull; PC</span>
+            <span style="color: var(--accent-green); font-weight: 600;">Released</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Cosmic Horizon -->
+      <article class="card">
+        <div class="card-img-wrap">
+          <img src="{{ '/assets/img/TVBanner.png' | relative_url }}" alt="Cosmic Horizon Banner" loading="lazy">
+          <span class="card-badge">In Development</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Cosmic Horizon</h3>
+          <p class="card-text">
+            A retro-inspired space action title built with Unity, pushing high-intensity 60fps arcade gameplay and deep cosmic exploration.
+          </p>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
+            <a href="{{ '/games/cosmic-horizon/' | relative_url }}" class="btn btn-primary" style="padding: 0.45rem 1rem; font-size: 0.85rem;">
+              Watch Gameplay
+            </a>
+            <a href="{{ '/blog/' | relative_url }}" class="btn btn-secondary" style="padding: 0.45rem 1rem; font-size: 0.85rem;">
+              Devlog
+            </a>
+          </div>
+          <div class="card-footer">
+            <span>Unity &bull; Xbox &bull; PC</span>
+            <span style="color: #f59e0b; font-weight: 600;">Alpha / Dev</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Curses 'N Abominations -->
+      <article class="card">
+        <div class="card-img-wrap">
+          <img src="{{ '/assets/img/CursesNAbominations_GlorisAttackingHeadlessHorse.png' | relative_url }}" alt="Curses 'N Abominations Art" loading="lazy">
+          <span class="card-badge">Concept &amp; Lore</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Curses &rsquo;N Abominations</h3>
+          <p class="card-text">
+            A dark fantasy universe combining atmospheric oil-painted gothic aesthetics, cursed knights, eerie graveyards, and mythical abominations.
+          </p>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
+            <a href="{{ '/games/curses-n-abominations/' | relative_url }}" class="btn btn-secondary" style="padding: 0.45rem 1rem; font-size: 0.85rem;">
+              Explore Concept Art
+            </a>
+          </div>
+          <div class="card-footer">
+            <span>Dark Fantasy &bull; Concept Art</span>
+            <span style="color: #a855f7; font-weight: 600;">Gallery</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Short Movies Section -->
+<section class="section" id="shorts" style="background: rgba(17, 24, 39, 0.4); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title"><span>🎬</span> Short Movies &amp; Films</h2>
+        <p class="section-desc">Independent cinematic works, narrative shorts, and audiovisual experiments.</p>
+      </div>
+      <a href="{{ '/shorts/' | relative_url }}" class="section-link">View all 5 films &rarr;</a>
+    </div>
+
+    <div class="grid">
+      <!-- Sob Sonhos -->
+      <div class="card">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/sbSfUYizFbI" title="Sob Sonhos" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="card-body" style="padding: 1.25rem;">
+          <h3 class="card-title" style="font-size: 1.15rem; margin-bottom: 0.25rem;">Sob Sonhos</h3>
+          <p class="card-text" style="font-size: 0.85rem; margin-bottom: 0.5rem;">Short movie exploration into dreams and reality.</p>
+        </div>
+      </div>
+
+      <!-- A Chama Vazia -->
+      <div class="card">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/-jt90zUPDrM" title="A Chama Vazia" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="card-body" style="padding: 1.25rem;">
+          <h3 class="card-title" style="font-size: 1.15rem; margin-bottom: 0.25rem;">A Chama Vazia</h3>
+          <p class="card-text" style="font-size: 0.85rem; margin-bottom: 0.5rem;">A poetic short film navigating solitude and internal conflicts.</p>
+        </div>
+      </div>
+
+      <!-- AD HOC -->
+      <div class="card">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/PG_jCq1JgDU" title="AD HOC" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="card-body" style="padding: 1.25rem;">
+          <h3 class="card-title" style="font-size: 1.15rem; margin-bottom: 0.25rem;">AD HOC</h3>
+          <p class="card-text" style="font-size: 0.85rem; margin-bottom: 0.5rem;">A stylized cinematic short narrative.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Latest Devlog Section -->
+<section class="section">
+  <div class="container container-narrow">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title"><span>📝</span> Latest Devlog</h2>
+        <p class="section-desc">Behind the scenes of game development and engineering.</p>
+      </div>
+      <a href="{{ '/blog/' | relative_url }}" class="section-link">All Devlogs &rarr;</a>
+    </div>
+
+    <article class="card" style="padding: 1.75rem;">
+      <span class="card-badge" style="position: static; margin-bottom: 0.75rem; display: inline-block;">Unity &bull; Console</span>
+      <h3 style="font-size: 1.5rem; margin-bottom: 0.75rem;">
+        <a href="{{ '/blog/2021/04/28/devlog-cosmic-horizon-on-xbox-upgrading-to-unity-2018/' | relative_url }}" style="color: var(--text-primary);">
+          Cosmic Horizon on XBOX: Upgrading to Unity 2018
+        </a>
+      </h3>
+      <p style="color: var(--text-secondary); margin-bottom: 1.25rem;">
+        Upgrading Cosmic Horizon for Xbox from Unity 5 to Unity 2018. Following the Unity docs, backing up assets, and handling console pipeline migration...
+      </p>
+      <div>
+        <a href="{{ '/blog/2021/04/28/devlog-cosmic-horizon-on-xbox-upgrading-to-unity-2018/' | relative_url }}" class="btn btn-secondary" style="padding: 0.45rem 1rem; font-size: 0.85rem;">
+          Read Devlog &rarr;
+        </a>
+      </div>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,49 @@
+---
+layout: default
+title: "Devlog & Blog"
+description: "Game development devlogs, technical notes, and creative updates from Mauricio Felippe."
+---
+
+<section class="section">
+  <div class="container container-narrow">
+    <div class="section-header">
+      <div>
+        <h1 class="hero-title" style="text-align: left; font-size: 2.75rem; margin-bottom: 0.5rem;">
+          Devlog &amp; <span class="gradient-text">Updates</span>
+        </h1>
+        <p class="section-desc">Behind the scenes of game development, engine migrations, and studio updates.</p>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 1.75rem;">
+      {% for post in site.posts %}
+      <article class="card" style="padding: 1.75rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+          <span class="card-badge" style="position: static;">{{ post.category | default: "Devlog" }}</span>
+          <span style="color: var(--text-muted); font-size: 0.85rem;">{{ post.date | date: "%B %d, %Y" }}</span>
+        </div>
+        
+        <h2 style="font-size: 1.45rem; font-weight: 700; margin-bottom: 0.75rem;">
+          <a href="{{ post.url | relative_url }}" style="color: var(--text-primary);">
+            {{ post.title }}
+          </a>
+        </h2>
+
+        {% if post.summary %}
+        <p style="color: var(--text-secondary); margin-bottom: 1.25rem; font-size: 0.95rem;">
+          {{ post.summary }}
+        </p>
+        {% endif %}
+
+        <div>
+          <a href="{{ post.url | relative_url }}" class="section-link">
+            Read Full Devlog &rarr;
+          </a>
+        </div>
+      </article>
+      {% else %}
+      <p style="color: var(--text-muted);">No devlogs published yet.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
