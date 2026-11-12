@@ -20,9 +20,9 @@ description: "Dark fantasy concept art gallery and lore for Curses 'N Abominatio
     </div>
 
     <!-- Featured Artwork Banner -->
-    <div style="margin-bottom: 3.5rem; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color); text-align: center; background: #000;">
+    <!--<div style="margin-bottom: 3.5rem; border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--border-color); text-align: center; background: #000;">
       <img src="{{ '/assets/img/CursesNAbominations_GlorisAttackingHeadlessHorse.png' | relative_url }}" alt="Gloris Attacking Headless Horse" style="max-height: 540px; margin: 0 auto;">
-    </div>
+    </div> -->
 
     <!-- Concept Art Gallery -->
     <div style="margin-bottom: 2rem;">
@@ -30,6 +30,19 @@ description: "Dark fantasy concept art gallery and lore for Curses 'N Abominatio
       <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
         Click any artwork to inspect in high-resolution lightbox view.
       </p>
+    </div>
+
+    <!-- Game Embed -->
+    <div style="margin: 2.5rem 0 3rem; text-align: center;">
+      <h2 class="section-title" style="margin-bottom: 1rem;"><span>🎮</span> Play the Game</h2>
+
+      <iframe
+        src="{{ '/games/curses-n-abominations/game/index.html' | relative_url }}"
+        title="Curses 'N Abominations"
+        allowfullscreen
+        loading="lazy"
+        style="width: min(100%, 960px); height: 540px; border: 0; border-radius: 16px; background: #000; box-shadow: 0 20px 40px rgba(0,0,0,0.35);">
+      </iframe>
     </div>
 
     <div class="gallery-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
