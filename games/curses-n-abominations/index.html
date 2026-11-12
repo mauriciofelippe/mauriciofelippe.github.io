@@ -28,48 +28,72 @@ description: "Dark fantasy concept art gallery and lore for Curses 'N Abominatio
     <div style="margin: 2.5rem 0 3rem; text-align: center;">
       <h2 class="section-title" style="margin-bottom: 1rem;"><span>🎮</span> Play the Game</h2>
 
-      <iframe
-        id="game-frame"
-        src="{{ '/games/curses-n-abominations/game/index.html' | relative_url }}"
-        title="Curses 'N Abominations"
-        allowfullscreen
-        loading="lazy"
-        style="width: min(100%, 960px); height: 540px; border: 0; border-radius: 16px; background: #000; box-shadow: 0 20px 40px rgba(0,0,0,0.35);">
-      </iframe>
-
-      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
-        <a href="{{ '/games/curses-n-abominations/game/index.html' | relative_url }}" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; justify-content: center; padding: 0.8rem 1.2rem; border-radius: 999px; background: linear-gradient(135deg, #8b5cf6, #6d28d9); color: #fff; text-decoration: none; font-weight: 600;">
-          ▶ Open in new window
-        </a>
-        <button id="fullscreen-btn" type="button" style="display: inline-flex; align-items: center; justify-content: center; padding: 0.8rem 1.2rem; border: 1px solid rgba(255,255,255,0.2); border-radius: 999px; background: rgba(255,255,255,0.05); color: #fff; font-weight: 600; cursor: pointer;">
-          ⛶ Fullscreen
+      <div id="game-launcher" style="display: flex; justify-content: center; margin-bottom: 1.25rem;">
+        <button id="play-game-btn" type="button" class="btn btn-primary" style="font-size: 1rem; padding: 0.9rem 1.8rem;">
+          <span>▶</span> Play
         </button>
+      </div>
+
+      <div id="game-shell" style="display: none;">
+        <iframe
+          id="game-frame"
+          title="Curses 'N Abominations"
+          allowfullscreen
+          loading="lazy"
+          style="width: min(100%, 960px); height: 540px; border: 0; border-radius: 16px; background: #000; box-shadow: 0 20px 40px rgba(0,0,0,0.35);">
+        </iframe>
+
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+          <a href="{{ '/games/curses-n-abominations/game/index.html' | relative_url }}" target="_blank" rel="noopener" class="btn btn-secondary">
+            <span>↗</span> Open in new window
+          </a>
+          <button id="fullscreen-btn" type="button" class="btn btn-secondary">
+            <span>⛶</span> Fullscreen
+          </button>
+        </div>
       </div>
     </div>
 
     <script>
       document.addEventListener('DOMContentLoaded', function () {
+        const playBtn = document.getElementById('play-game-btn');
+        const gameShell = document.getElementById('game-shell');
         const frame = document.getElementById('game-frame');
-        const button = document.getElementById('fullscreen-btn');
+        const fullscreenBtn = document.getElementById('fullscreen-btn');
+        const gameUrl = '{{ "/games/curses-n-abominations/game/index.html" | relative_url }}';
 
-        if (!frame || !button) return;
+        if (!playBtn || !gameShell || !frame) return;
 
-        button.addEventListener('click', async function () {
-          try {
-            if (frame.requestFullscreen) {
-              await frame.requestFullscreen();
-            } else if (frame.webkitRequestFullscreen) {
-              await frame.webkitRequestFullscreen();
-            } else if (frame.mozRequestFullScreen) {
-              await frame.mozRequestFullScreen();
-            } else {
-              window.open('{{ '/games/curses-n-abominations/game/index.html' | relative_url }}', '_blank');
-            }
-          } catch (error) {
-            console.warn('Fullscreen not available:', error);
-            window.open('{{ '/games/curses-n-abominations/game/index.html' | relative_url }}', '_blank');
+        let loaded = false;
+
+        playBtn.addEventListener('click', function () {
+          if (!loaded) {
+            frame.src = gameUrl;
+            loaded = true;
           }
+
+          gameShell.style.display = 'block';
+          playBtn.style.display = 'none';
         });
+
+        if (fullscreenBtn) {
+          fullscreenBtn.addEventListener('click', async function () {
+            try {
+              if (frame.requestFullscreen) {
+                await frame.requestFullscreen();
+              } else if (frame.webkitRequestFullscreen) {
+                await frame.webkitRequestFullscreen();
+              } else if (frame.mozRequestFullScreen) {
+                await frame.mozRequestFullScreen();
+              } else {
+                window.open(gameUrl, '_blank');
+              }
+            } catch (error) {
+              console.warn('Fullscreen not available:', error);
+              window.open(gameUrl, '_blank');
+            }
+          });
+        }
       });
     </script>
     
