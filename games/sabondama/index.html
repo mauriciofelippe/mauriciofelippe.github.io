@@ -1,0 +1,93 @@
+---
+layout: default
+title: "Sababondama | Play Online"
+description: "Sababondama is a playable browser build of the action game, with direct Google Play install support."
+---
+
+<article class="section">
+  <div class="container container-narrow">
+    <div style="margin-bottom: 2.5rem;">
+      <a href="{{ '/games/' | relative_url }}" class="section-link" style="margin-bottom: 1rem; display: inline-flex;">&larr; Back to Games</a>
+      <div style="display: flex; gap: 0.5rem; margin-bottom: 0.75rem; flex-wrap: wrap;">
+        <span class="card-badge" style="position: static; background: #22c55e;">Android</span>
+        <span class="card-badge" style="position: static;">Playable in Browser</span>
+        <span class="card-badge" style="position: static;">Action</span>
+      </div>
+      <h1 class="hero-title" style="text-align: left; margin-bottom: 1rem;">Sababondama</h1>
+      <p style="font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 1.5rem;">
+        A fast, mobile-first action experience with a direct browser play option and Google Play install link for the native Android version.
+      </p>
+
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <button id="play-game-btn" type="button" class="btn btn-primary">
+          <span>▶</span> Play Online
+        </button>
+        <a href="https://play.google.com/store/apps/details?id=com.mauriciofelippe.sabondama&hl=en" target="_blank" rel="noopener" class="btn btn-secondary">
+          <span>⬇</span> Install on Google Play
+        </a>
+      </div>
+    </div>
+
+    <div id="game-shell" style="display: none; margin-top: 1.5rem;">
+      <div style="margin-bottom: 1rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <a href="{{ '/games/sabondama/game/index.html' | relative_url }}" target="_blank" rel="noopener" class="btn btn-secondary">
+          <span>↗</span> Open in new window
+        </a>
+        <button id="fullscreen-btn" type="button" class="btn btn-secondary">
+          <span>⛶</span> Fullscreen
+        </button>
+      </div>
+
+      <iframe
+        id="game-frame"
+        title="Sababondama"
+        allowfullscreen
+        loading="lazy"
+        style="width: min(100%, 960px); height: 540px; border: 0; border-radius: 16px; background: #000; box-shadow: 0 20px 40px rgba(0,0,0,0.35); display: block; margin: 0 auto;">
+      </iframe>
+    </div>
+  </div>
+</article>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const playBtn = document.getElementById('play-game-btn');
+    const gameShell = document.getElementById('game-shell');
+    const frame = document.getElementById('game-frame');
+    const fullscreenBtn = document.getElementById('fullscreen-btn');
+    const gameUrl = '{{ "/games/sabondama/game/index.html" | relative_url }}';
+
+    if (!playBtn || !gameShell || !frame) return;
+
+    let loaded = false;
+
+    playBtn.addEventListener('click', function () {
+      if (!loaded) {
+        frame.src = gameUrl;
+        loaded = true;
+      }
+
+      gameShell.style.display = 'block';
+      playBtn.style.display = 'none';
+    });
+
+    if (fullscreenBtn) {
+      fullscreenBtn.addEventListener('click', async function () {
+        try {
+          if (frame.requestFullscreen) {
+            await frame.requestFullscreen();
+          } else if (frame.webkitRequestFullscreen) {
+            await frame.webkitRequestFullscreen();
+          } else if (frame.mozRequestFullScreen) {
+            await frame.mozRequestFullScreen();
+          } else {
+            window.open(gameUrl, '_blank');
+          }
+        } catch (error) {
+          console.warn('Fullscreen not available:', error);
+          window.open(gameUrl, '_blank');
+        }
+      });
+    }
+  });
+</script>
