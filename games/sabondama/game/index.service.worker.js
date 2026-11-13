@@ -4,7 +4,7 @@
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
 /** @type {string} */
-const CACHE_VERSION = '1794533635|6782340867';
+const CACHE_VERSION = '1794535412|8558068440';
 /** @type {string} */
 const CACHE_PREFIX = 'Sabondama-sw-cache-';
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
