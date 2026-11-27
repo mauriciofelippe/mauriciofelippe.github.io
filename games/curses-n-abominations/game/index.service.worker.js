@@ -3,7 +3,7 @@
 // that they need an Internet connection to run the project if desired.
 // Incrementing CACHE_VERSION will kick off the install event and force
 // previously cached resources to be updated from the network.
-const CACHE_VERSION = "1795662628|1174154602";
+const CACHE_VERSION = "1795742329|147176970";
 const CACHE_PREFIX = "Curses 'N Abomin-sw-cache-";
 const CACHE_NAME = CACHE_PREFIX + CACHE_VERSION;
 const OFFLINE_URL = "index.offline.html";
